@@ -7,3 +7,5 @@ facilitates the conversion between ASCII characters and corresponding Braille re
 
 ## Acknowledgements
 Professor Samuel Rebelsky & Peter Michael Osera and their readings/labs for CSC 207 (trees and traversal)
+A bunch of my classmates and I worked on this project together in our classroom
+StackOverflow to double-check syntax

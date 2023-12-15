@@ -1,6 +1,4 @@
 import java.io.PrintWriter;
-import java.util.*;
-import java.util.HashMap;
 
 /**
  * Takes in two command-line parameters (target character set & source chars) that translates the text
@@ -26,24 +24,20 @@ public class BrailleASCII {
     switch (targetChar.toLowerCase()) {
       case "braille":
         for (char c : sourceChar.toCharArray()) {
-          String brailles = brailles.toBraille(c);
+          String brailles = BrailleASCIITables.toBraille(c);
           pen.println(brailles);
         } // for
         break;
       case "ascii": 
-        for (String bits : sourceChar.split(" ")) {
-          String asciiChar = asciiChar.toASCII(bits);
-          pen.println(asciiChar);
-        } // for
+        String asciiChar = BrailleASCIITables.toASCII(sourceChar);
+        pen.println(asciiChar);
         break;
       case "unicode": 
-        for (String bits : sourcecChar.split(" ")) {
-          String unicodeChar = unicodeChar.toUnicode(bits);
-          pen.println(unicodeChar);
-        } // for
+        String unicodeChar = BrailleASCIITables.toUnicode(sourceChar);
+        pen.println(unicodeChar);
         break;
       default:
-        pen.println("Error: Invalid target character set");
+        System.err.println("Error: Invalid target character set");
     } // switch
   } // main
     
